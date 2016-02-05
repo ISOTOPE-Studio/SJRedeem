@@ -1,0 +1,18 @@
+﻿name: SJRedeem
+main: cc.isotopestudio.SJRedeem.sjredeem.SJRedeem
+
+author: Mars
+description: Redeem Code with Items
+website: http://isotopestudio.cc
+version: 1.0
+commands:
+  sd:
+    description: 兑换
+    usage: /<command> help
+    permission: SJRedeem.dh
+    permission-message: 你没有权限
+  sda:
+    description: 兑换
+    usage: /<command> help
+    permission: SJRedeem.sda
+    permission-message: 你没有权限
