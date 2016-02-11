@@ -67,7 +67,11 @@ public class SJRedeemCommand implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("sd")) {
 			if (args.length > 0 && !args[0].equals("help") && sender instanceof Player) {
 				Player player = (Player) sender;
-
+				if (!player.hasPermission("SJRedeem.sd")) {
+					sender.sendMessage(
+							(new StringBuilder(plugin.prefix)).append(ChatColor.RED).append("你没有权限").toString());
+					return true;
+				}
 				if (args[0].equals("list")) {
 					List<String> list = plugin.getPlayersData().getStringList("Players." + player.getName());
 					if (list.size() == 0)
@@ -207,6 +211,10 @@ public class SJRedeemCommand implements CommandExecutor {
 			}
 		}
 		if (cmd.getName().equalsIgnoreCase("sda")) {
+			if (!sender.hasPermission("SJRedeem.sda")) {
+				sender.sendMessage((new StringBuilder(plugin.prefix)).append(ChatColor.RED).append("你没有权限").toString());
+				return true;
+			}
 			if (args.length > 0 && !args[0].equals("help")) {
 				if (args[0].equals("create")) {
 					if (args.length == 3) {
@@ -369,6 +377,7 @@ public class SJRedeemCommand implements CommandExecutor {
 		sender.sendMessage((new StringBuilder()).append(ChatColor.GOLD).append(ChatColor.BOLD).append("制作： ")
 				.append(ChatColor.RESET).append(ChatColor.AQUA).append("Mars (ISOTOPE Studio)").toString());
 		sender.sendMessage((new StringBuilder()).append(ChatColor.GOLD).append(ChatColor.BOLD).append("网址： ")
-				.append(ChatColor.RESET).append(ChatColor.AQUA).append("http://isotopestudio.cc").toString());
+				.append(ChatColor.RESET).append(ChatColor.AQUA).append("http://isotopestudio.cc/minecraft.html")
+				.toString());
 	}
 }

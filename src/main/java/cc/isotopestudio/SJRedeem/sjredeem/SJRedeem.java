@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public final class SJRedeem extends JavaPlugin {
-	public final String version = "v1.0";
+	public final String version = "v1.0.1";
 
 	public final String prefix = (new StringBuilder()).append(ChatColor.GREEN).append("[").append(ChatColor.ITALIC)
 			.append(ChatColor.BOLD).append("兑换").append(ChatColor.RESET).append(ChatColor.GREEN).append("]")
@@ -49,6 +49,8 @@ public final class SJRedeem extends JavaPlugin {
 		this.getCommand("sda").setExecutor(new SJRedeemCommand(this));
 
 		getLogger().info("兑换插件 成功加载!");
+		getLogger().info("兑换插件 由ISOTOPE Studio制作!");
+		getLogger().info("http://isotopestudio.cc");
 	}
 
 	public void onReload() {
